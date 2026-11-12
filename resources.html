@@ -4,843 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources | OhLitCo</title>
+  <meta name="description" content="Free tools, curricula, funding, and websites for people who help adults learn and for adults who are learning, vetted by Ohio's literacy community.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --cream: #F7F3EE;
-      --charcoal: #2A2724;
-      --mid-gray: #8A857E;
-      --light-gray: #C8C3BC;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Source Sans 3', system-ui, sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(247, 243, 238, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 0.5px solid var(--light-gray);
-    }
-    .nav-logo {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      text-decoration: none;
-    }
-    .nav-logo span { color: #C8881A; }
-    nav a.nav-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    nav a.nav-link:hover { color: var(--charcoal); }
-
-    /* OHIO BG */
-    .ohio-canvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.3;
-    }
-
-    /* PAGE */
-    .page {
-      position: relative;
-      z-index: 1;
-      padding-top: 7rem;
-      padding-bottom: 6rem;
-      max-width: 900px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    .page-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid-gray);
-      margin-bottom: 0.8rem;
-    }
-    .page-title {
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .page-intro {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #5A5550;
-      max-width: 580px;
-      margin-bottom: 3rem;
-    }
-    .page-intro a {
-      color: inherit;
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    
-    /* CARDS */
-    .resources { display: flex; flex-direction: column; gap: 1.6rem; }
-
-    .resource-card {
-      background: rgba(250, 248, 245, 0.88);
-      border: 1px solid #E0DBD4;
-      border-radius: 12px;
-      padding: 1.8rem 2rem;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-    }
-    .resource-card:hover {
-      box-shadow: 0 4px 20px rgba(42, 39, 36, 0.07);
-      transform: translateY(-2px);
-    }
-    .resource-card.hidden { display: none; }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.8rem;
-    }
-    .card-badges {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
-    .badge {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-    .badge-curriculum { background: #EAF0E8; color: #3D6E4E; }
-    .badge-website    { background: #E8EDF8; color: #2E508C; }
-    .badge-tool       { background: #F5EAF0; color: #7A3A6A; }
-    .badge-video      { background: #FDF0E0; color: #8A5010; }
-    .badge-adult      { background: #F0EDE8; color: #5A4A38; }
-    .badge-k12        { background: #E8F5EE; color: #2A5E40; }
-    .badge-earlychildhood { background: #EEF0F8; color: #3A3A7A; }
-    .badge-funding { background: #FAE8E4; color: #963C24; }
-    .badge-ohio { background: #F0EDE8; color: #5A4A38; }
-    .badge-pd         { background: #FFF0E8; color: #8A4010; }
-
-    .card-title {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.2rem;
-    }
-    .card-source {
-      font-size: 0.85rem;
-      color: var(--mid-gray);
-      margin-bottom: 0.9rem;
-    }
-    .card-desc {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #4A4540;
-      margin-bottom: 1rem;
-    }
-    .card-love {
-      border-radius: 10px;
-      padding: 0.75rem 1.1rem;
-      margin-bottom: 1.2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .card-love::before {
-      content: '';
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      opacity: 0.18;
-      filter: blur(18px);
-      background: currentColor;
-    }
-    .card-love::after {
-      content: '';
-      position: absolute;
-      bottom: -20px; left: 20px;
-      width: 70px; height: 70px;
-      border-radius: 50%;
-      opacity: 0.12;
-      filter: blur(14px);
-      background: currentColor;
-    }
-    .card-love-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-      position: relative;
-      z-index: 1;
-    }
-    .card-love p {
-      font-size: 0.93rem;
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-    /* Rotating color themes for love sections */
-    .resource-card:nth-child(4n+1) .card-love { background: #FDF0DC; color: #C8881A; }
-    .resource-card:nth-child(4n+1) .card-love .card-love-label { color: #A86A0A; }
-    .resource-card:nth-child(4n+1) .card-love p { color: #5A4020; }
-    .resource-card:nth-child(4n+2) .card-love { background: #FAE8E4; color: #B84C32; }
-    .resource-card:nth-child(4n+2) .card-love .card-love-label { color: #963C24; }
-    .resource-card:nth-child(4n+2) .card-love p { color: #5A2818; }
-    .resource-card:nth-child(4n+3) .card-love { background: #E8F2EC; color: #3D6E4E; }
-    .resource-card:nth-child(4n+3) .card-love .card-love-label { color: #2A5438; }
-    .resource-card:nth-child(4n+3) .card-love p { color: #1E3C28; }
-    .resource-card:nth-child(4n+4) .card-love { background: #E4EAF6; color: #2E508C; }
-    .resource-card:nth-child(4n+4) .card-love .card-love-label { color: #1E3870; }
-    .resource-card:nth-child(4n+4) .card-love p { color: #162848; }
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      text-decoration: none;
-      border-bottom: 1.5px solid var(--light-gray);
-      padding-bottom: 1px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .card-link:hover { color: #C8881A; border-color: #C8881A; }
-    .card-link svg {
-      width: 13px; height: 13px;
-      stroke: currentColor; fill: none;
-      stroke-width: 2; stroke-linecap: round;
-    }
-
-    
-    /* CLOSING */
-    .closing {
-      margin-top: 4rem;
-      padding: 2.5rem 2rem;
-      background: var(--charcoal);
-      border-radius: 12px;
-      text-align: center;
-      color: var(--cream);
-    }
-    .closing p {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 0.8rem;
-      color: #D4CFC9;
-    }
-    .closing a {
-      font-size: 1rem;
-      color: var(--cream);
-      text-decoration: none;
-      border-bottom: 1px solid #5A5550;
-      padding-bottom: 1px;
-      transition: border-color 0.2s;
-    }
-    .closing a:hover { border-color: #A8A39C; }
-
-    
-    
-    .page { max-width: 1120px; }
-    .page-intro { max-width: 640px; margin-bottom: 1.5rem; }
-    .jump-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 3rem; }
-    .jump {
-      font-family: 'Lora', Georgia, serif; font-size: 1rem; color: var(--charcoal);
-      text-decoration: none; padding: 0.7rem 1.3rem; border: 1.5px solid var(--charcoal);
-      border-radius: 2px; transition: background 0.2s, color 0.2s;
-    }
-    .jump:hover, .jump:focus-visible { background: var(--charcoal); color: var(--cream); }
-    .layout { display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; }
-    .sidebar { flex: 0 1 220px; min-width: 200px; display: flex; flex-direction: column; gap: 1.8rem; padding-bottom: 2rem; }
-    @media (min-width: 900px) { .sidebar { position: sticky; top: 6rem; } }
-    .main { flex: 999 1 560px; min-width: 0; }
-    .filter-group-label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #5A5550; margin-bottom: 0.7rem; }
-    .filter-tags { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-    .tag {
-      font-family: inherit; font-size: 0.95rem; font-weight: 600; padding: 0.5rem 1rem; min-height: 44px;
-      border-radius: 100px; border: 1px solid var(--light-gray); color: var(--charcoal);
-      background: transparent; cursor: pointer; transition: all 0.15s ease;
-    }
-    .tag:hover { border-color: var(--charcoal); }
-    .tag[aria-pressed="true"] { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
-    .tag .n { opacity: 0.7; font-weight: 400; margin-left: 0.2rem; }
-    .results-count { font-size: 0.95rem; color: #5A5550; margin-bottom: 0.5rem; }
-    .clear { font-family: inherit; font-size: 0.95rem; color: var(--charcoal); background: none; border: 0; border-bottom: 1px solid var(--charcoal); padding: 0.6rem 0; min-height: 44px; cursor: pointer; }
-    .clear[hidden] { display: none; }
-    .res-section { margin-bottom: 4.5rem; }
-    .res-section[hidden] { display: none; }
-    .section-head { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 0 1.2rem; margin-bottom: 1.8rem; }
-    .section-bar { display: block; width: 48px; height: 6px; margin-top: 1rem; }
-    .section-title { font-family: 'Lora', Georgia, serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 600; line-height: 1.15; margin-bottom: 0.4rem; }
-    .section-sub { font-size: 1.05rem; line-height: 1.6; color: #5A5550; }
-    .resource-card[hidden] { display: none; }
-    .no-results { display: none; text-align: left; padding: 0 0 3rem; }
-    .no-results.show { display: block; }
-    .no-results a { color: inherit; }
-    .card-source { color: #5A5550; }
-
-    @media (max-width: 600px) {
-      .card-header { flex-direction: column-reverse; }
-      .page { padding-left: 1.2rem; padding-right: 1.2rem; }
-      nav { padding: 1rem 1.2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/resources.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <a href="index.html" class="nav-logo">Oh<span>Lit</span>Co</a>
-  <a href="index.html" class="nav-link">Home</a>
-</nav>
-
-<!-- Subtle Ohio watercolor bg -->
-<svg class="ohio-canvas" viewBox="0 0 540 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-  <defs>
-    <filter id="wc1" x="-40%" y="-40%" width="180%" height="180%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="4" seed="2" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="28" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="wc2" x="-40%" y="-40%" width="180%" height="180%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="7" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="wc3" x="-40%" y="-40%" width="180%" height="180%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="14" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="32" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </defs>
-  <ellipse cx="420" cy="90"  rx="62" ry="52" fill="#E8A830" opacity="0.22" filter="url(#wc1)"/>
-  <ellipse cx="118" cy="88"  rx="62" ry="52" fill="#D4654A" opacity="0.22" filter="url(#wc2)"/>
-  <ellipse cx="268" cy="218" rx="62" ry="52" fill="#5A8C6A" opacity="0.20" filter="url(#wc3)"/>
-  <ellipse cx="198" cy="438" rx="62" ry="52" fill="#4A72B8" opacity="0.20" filter="url(#wc2)"/>
-  <ellipse cx="348" cy="128" rx="52" ry="44" fill="#E8A830" opacity="0.16" filter="url(#wc1)"/>
-  <ellipse cx="192" cy="128" rx="52" ry="44" fill="#D4654A" opacity="0.16" filter="url(#wc2)"/>
-  <ellipse cx="338" cy="288" rx="55" ry="48" fill="#7AAC8A" opacity="0.16" filter="url(#wc1)"/>
-  <ellipse cx="328" cy="448" rx="52" ry="44" fill="#4A72B8" opacity="0.16" filter="url(#wc3)"/>
-  <ellipse cx="98"  cy="360" rx="58" ry="50" fill="#9B6B8A" opacity="0.14" filter="url(#wc2)"/>
-  <ellipse cx="258" cy="78"  rx="58" ry="48" fill="#C8922A" opacity="0.14" filter="url(#wc3)"/>
-  <ellipse cx="388" cy="428" rx="58" ry="50" fill="#3A8C7A" opacity="0.14" filter="url(#wc1)"/>
-</svg>
-
-<div class="page">
-  <p class="page-eyebrow">OhLitCo</p>
-  <h1 class="page-title">Resources</h1>
-  <p class="page-intro">A curated collection of tools, curricula, and websites vetted by Ohio's literacy community. More coming as we grow, and if you have something to add, <a href="mailto:hello@ohlitco.org">send it our way</a>.</p>
-  <div class="jump-row">
-    <a class="jump" href="#educators">For people who help adults learn</a>
-    <a class="jump" href="#learners">For adults who are learning</a>
-  </div>
-
-  <div class="layout">
-    <aside class="sidebar" aria-label="Filter resources">
-      <div class="filter-group">
-        <span class="filter-group-label">Format</span>
-        <div class="filter-tags">
-          <button type="button" class="tag" data-format-btn="curriculum" aria-pressed="false">Curriculum <span class="n"></span></button>
-          <button type="button" class="tag" data-format-btn="website" aria-pressed="false">Website <span class="n"></span></button>
-          <button type="button" class="tag" data-format-btn="video" aria-pressed="false">Video / PD <span class="n"></span></button>
-          <button type="button" class="tag" data-format-btn="funding" aria-pressed="false">Funding <span class="n"></span></button>
-          
-        </div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-group-label">Location</span>
-        <div class="filter-tags">
-          <button type="button" class="tag" id="ohio-btn" aria-pressed="false">Made for Ohio <span class="n"></span></button>
-        </div>
-      </div>
-      <div>
-        <p class="results-count" id="results-count" aria-live="polite"></p>
-        <button type="button" class="clear" id="clear" hidden>Clear filters</button>
-      </div>
-    </aside>
-
-    <div class="main">
-      <div class="no-results" id="no-results">Nothing matches that combination yet. Try clearing a filter, or <a href="mailto:hello@ohlitco.org">tell us what you were looking for</a>.</div>
-
-    <section class="res-section" id="educators" data-section>
-      <div class="section-head">
-        <span class="section-bar" style="background:#B07408"></span>
-        <div>
-          <h2 class="section-title">For people who help adults learn</h2>
-          <p class="section-sub">Curricula, kits, and training for tutors, teachers, and program staff.</p>
-        </div>
-      </div>
-      <div class="resources">
-      <article class="resource-card" data-format="curriculum" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Pathway to Literacy</h3>
-            <p class="card-source">Immigrant Welcome Center, Indianapolis</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-curriculum">Curriculum</span></div>
-        </div>
-        <p class="card-desc">A free, well-rounded curriculum and assessment tool for adult learners with emerging literacy. Includes a 10-week sequence organized into four levels (A to D), a reading diagnostic, and an intake assessment.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>With everything hosted in Google Slides, this resource is easy to access and use.</p>
-        </div>
-        <a class="card-link" href="https://pathwaytoliteracy.org" target="_blank" rel="noopener">pathwaytoliteracy.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="curriculum" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">ESL Instructional Support Kits</h3>
-            <p class="card-source">Literacy Minnesota</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-curriculum">Curriculum</span></div>
-        </div>
-        <p class="card-desc">A set of five free, downloadable kits: Pronunciation, Phonics and Phonemic Awareness, Speaking and Listening, Reading, and Citizenship. Each is packed with grab-and-go activities for one-on-one, small group, or full class settings.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>Grab-and-go activities that actually work. Low prep, high utility.</p>
-        </div>
-        <a class="card-link" href="https://www.literacymn.org/esl-instructional-support-kits" target="_blank" rel="noopener">literacymn.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="curriculum" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">CILIA-T</h3>
-            <p class="card-source">University of Minnesota Duluth / Literacy Minnesota</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-curriculum">Curriculum</span></div>
-        </div>
-        <p class="card-desc">A comprehensive, research-backed curriculum for intermediate and advanced adult English language learners, focused on academic vocabulary, comprehension, and digital literacy skills.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>It pushes learners toward the academic language needed for higher education, career advancement, and citizenship. Rigorous and free.</p>
-        </div>
-        <a class="card-link" href="https://sites.google.com/d.umn.edu/cilia-t/home" target="_blank" rel="noopener">CILIA-T site <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="video" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Phonemic Awareness in Older Learners: Bridging the Gap</h3>
-            <p class="card-source">edWeb.net Teach to Read Community</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-video">Video / PD</span></div>
-        </div>
-        <p class="card-desc">A free on-demand webinar exploring how phonemic awareness instruction can be a game-changer for older students and adult learners who struggle with word reading. Educators can earn a free CE certificate upon completion.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>Phonemic awareness doesn't stop being relevant after second grade, and this webinar makes that case well.</p>
-        </div>
-        <a class="card-link" href="https://home.edweb.net/webinar/teach2read20240710/" target="_blank" rel="noopener">Watch on edWeb <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">LINCS</h3>
-            <p class="card-source">U.S. Department of Education</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A national site for adult education practitioners with free self-paced online courses and a searchable resource collection. It also has a Learner Center that connects adults to free online resources for reading and job skills.</p>
-        <a class="card-link" href="https://lincs.ed.gov/" target="_blank" rel="noopener">lincs.ed.gov <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="video" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Free Webinars for Tutors and Teachers</h3>
-            <p class="card-source">ProLiteracy</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-video">Video / PD</span></div>
-        </div>
-        <p class="card-desc">Recent topics include the updated citizenship test, teaching foundational reading skills to adult ESOL learners, health literacy, and moving from ESL to employment. Some resources on the site need a free account.</p>
-        <a class="card-link" href="https://www.proliteracy.org/courses" target="_blank" rel="noopener">proliteracy.org/courses <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="curriculum" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Money Smart for Adults</h3>
-            <p class="card-source">Federal Deposit Insurance Corporation (FDIC)</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-curriculum">Curriculum</span></div>
-        </div>
-        <p class="card-desc">An instructor-led financial education curriculum with 14 modules. Each one comes with an instructor guide, slides, and a participant guide you can download. Other languages, including Spanish, are available through the FDIC catalog.</p>
-        <a class="card-link" href="https://www.fdic.gov/consumer-resource-center/money-smart-adults" target="_blank" rel="noopener">fdic.gov <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Free Reading Resources for Beginning-Level, US-Born Adult Learners</h3>
-            <p class="card-source">Literacy Minnesota</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A short roundup of free reading practice for adults who grew up speaking English and are building basic reading skills. It points to Reading Skills for Today's Adults, ReadWorks, and Newsela Lite. ReadWorks and Newsela Lite need a free login, and ReadWorks was made for kids.</p>
-        <a class="card-link" href="https://www.literacymn.org/free-reading-resources-for-beginning-level-born-adult-education-learners" target="_blank" rel="noopener">literacymn.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html" class="nav-logo">Oh<span>Lit</span>Co</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="resources.html" class="nav-link" aria-current="page">Resources</a>
     </div>
-    </section>
+  </nav>
 
-    <section class="res-section" id="programs" data-section>
-      <div class="section-head">
-        <span class="section-bar" style="background:#3D6E4E"></span>
-        <div>
-          <h2 class="section-title">Running a program</h2>
-          <p class="section-sub">Help for starting, strengthening, and sustaining a program, whether you are paid staff or a volunteer team.</p>
-        </div>
-      </div>
-      <div class="resources">
-      <article class="resource-card" data-format="website" data-ohio="true">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Ohio Literacy Resource Center</h3>
-            <p class="card-source">Kent State University</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span><span class="badge badge-ohio">Ohio</span></div>
-        </div>
-        <p class="card-desc">Ohio's home for adult and family literacy support. It offers training, program management resources, standards-based lesson resources, and a Family Literacy Resource Notebook, and it works with literacy coalitions, libraries, and providers across the state.</p>
-        <div class="card-love">
-          <p class="card-love-label">Questions?</p>
-          <p>Toll free in Ohio: 800-765-2897, or email olrc@literacy.kent.edu.</p>
-        </div>
-        <a class="card-link" href="https://literacy.kent.edu/Oasis/" target="_blank" rel="noopener">literacy.kent.edu <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Adult Learner Persistence Project</h3>
-            <p class="card-source">New England Literacy Resource Center</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">Findings from 18 adult education programs that tested ways to keep learners coming back. It includes strategies for intake, instruction, support, and program design, self-assessment tools, and six "drivers of persistence."</p>
-        <a class="card-link" href="https://nelrc.org/persist/overview.html" target="_blank" rel="noopener">nelrc.org/persist <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="true">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">The Literacy Cooperative</h3>
-            <p class="card-source">Greater Cleveland</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span><span class="badge badge-ohio">Ohio</span></div>
-        </div>
-        <p class="card-desc">A Cleveland nonprofit working to advance literacy through a service delivery system that meets the highest standards in the field. Its vision is that all children and adults in Greater Cleveland reach their highest literacy potential.</p>
-        <a class="card-link" href="https://www.literacycooperative.org/" target="_blank" rel="noopener">literacycooperative.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-    </div>
-    </section>
-
-    <section class="res-section" id="funding" data-section>
-      <div class="section-head">
-        <span class="section-bar" style="background:#B84C32"></span>
-        <div>
-          <h2 class="section-title">Funding</h2>
-          <p class="section-sub">Grants and free tools for programs. Eligibility and dates change, so check each one before you plan around it.</p>
-        </div>
-      </div>
-      <div class="resources">
-      <article class="resource-card" data-format="funding" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Literacy Opportunity Fund</h3>
-            <p class="card-source">ProLiteracy</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-funding">Funding</span></div>
-        </div>
-        <p class="card-desc">Grants for U.S. nonprofits that teach adults directly. Funds can cover general operating costs like salaries, technology, and supplies, or a specific project or new program.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>You need to be a registered 501(c)(3) with an EIN. Book distributions and lending libraries are not funded. The 2026 round closed October 1, so watch for the next one.</p>
-        </div>
-        <a class="card-link" href="https://www.proliteracy.org/grants-funding/literacy-opportunity-fund/" target="_blank" rel="noopener">proliteracy.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="funding" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Mobile Learning Fund</h3>
-            <p class="card-source">ProLiteracy and New Readers Press</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-funding">Funding</span></div>
-        </div>
-        <p class="card-desc">Free licenses to online learning tools for adult literacy programs, including New Readers Press Online Learning, Learning Upgrade, EnGen, Leamos, and News for You Online.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>Applications are open year round and awarded on a rolling basis while funds last. Learners must be 16 or older. You will need to complete a free demo or trial, and it does not cover devices.</p>
-        </div>
-        <a class="card-link" href="https://proliteracy.org/MobileLearningFund" target="_blank" rel="noopener">proliteracy.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="funding" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Adult and Family Literacy Grants</h3>
-            <p class="card-source">Dollar General Literacy Foundation</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-funding">Funding</span></div>
-        </div>
-        <p class="card-desc">Grants of up to $10,000 for adult and family literacy. Nonprofits, public libraries, and schools or colleges that provide direct literacy services can apply.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>Your organization must be within 15 miles of a Dollar General store. The 2026 adult and family deadline was in early February, so expect an early-year window.</p>
-        </div>
-        <a class="card-link" href="https://www.dgliteracy.org/grant-programs/" target="_blank" rel="noopener">dgliteracy.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="funding" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Innovation Grants</h3>
-            <p class="card-source">National Literacy Directory</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-funding">Funding</span></div>
-        </div>
-        <p class="card-desc">Grants for programs that find successful and innovative ways to reach more learners. Any program listed in the National Literacy Directory can apply.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>The page does not post award amounts or dates, so check with the directory. Getting your program listed first is the way in.</p>
-        </div>
-        <a class="card-link" href="https://www.nld.org/page/innovation-grants" target="_blank" rel="noopener">nld.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-    </div>
-    </section>
-
-    <section class="res-section" id="learners" data-section>
-      <div class="section-head">
-        <span class="section-bar" style="background:#2E508C"></span>
-        <div>
-          <h2 class="section-title">For adults who are learning</h2>
-          <p class="section-sub">Free tools you can use on your own, at your own pace, on your phone or a computer.</p>
-        </div>
-      </div>
-      <div class="resources">
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">DigitalLearn</h3>
-            <p class="card-source">Public Library Association</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A free online hub for digital literacy training. Short, video-based courses with narration on using a computer, navigating websites, email, and internet privacy. Available in English and Spanish.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>Clean, accessible, and easy to navigate. The self-paced format works well for learners.</p>
-        </div>
-        <a class="card-link" href="https://www.digitallearn.org/" target="_blank" rel="noopener">digitallearn.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Learning Chocolate</h3>
-            <p class="card-source">learningchocolate.com</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A free vocabulary learning platform organized into themed categories like body, community, food, jobs, and transportation, with picture dictionaries and audio pronunciation. Learners can choose from multiple language interfaces.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>Easy to use, visually clear, and fun. There's no login required. Learners can just jump in.</p>
-        </div>
-        <a class="card-link" href="https://www.learningchocolate.com/" target="_blank" rel="noopener">learningchocolate.com <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="curriculum" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Life Skills for Adult Learners</h3>
-            <p class="card-source">Rise / Articulate</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-curriculum">Curriculum</span></div>
-        </div>
-        <p class="card-desc">A free interactive online course covering practical life skills, including workplace readiness, communication, financial literacy, and navigating everyday situations. Self-paced and mobile-friendly.</p>
-        <div class="card-love">
-          <p class="card-love-label">What we love about it</p>
-          <p>The mobile-friendly format means learners can use it on their phones, a real advantage for busy adults juggling work and family.</p>
-        </div>
-        <a class="card-link" href="https://rise.articulate.com/share/cKAWIYNASA0GapUVzTPcSBRG7eBGZuZv#/" target="_blank" rel="noopener">Open course <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">USA Learns</h3>
-            <p class="card-source">Sacramento County Office of Education</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A free website where adults can learn English, build job skills, and prepare for U.S. citizenship. Lessons cover speaking, listening, reading, writing, grammar, pronunciation, and life skills, and they work on a phone, computer, or tablet.</p>
-        <a class="card-link" href="https://www.usalearns.org/" target="_blank" rel="noopener">usalearns.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="true">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Find an Adult Education Class Near You</h3>
-            <p class="card-source">Ohio Aspire</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span><span class="badge badge-ohio">Ohio</span></div>
-        </div>
-        <p class="card-desc">Ohio Aspire is the state's adult education program network, with local programs run by schools, colleges, libraries, and nonprofits. The state's Aspire page and program directory show which program serves your county.</p>
-        <a class="card-link" href="https://education.ohio.gov/Aspire" target="_blank" rel="noopener">education.ohio.gov/Aspire <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">National Literacy Directory</h3>
-            <p class="card-source">NCFL and ProLiteracy</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">A searchable directory where literacy and education programs list themselves, so adults and volunteers can find classes and tutoring near them.</p>
-        <a class="card-link" href="https://www.nld.org/" target="_blank" rel="noopener">nld.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Bow Valley Readers</h3>
-            <p class="card-source">Bow Valley College</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">Seven levels of stories written for adults, each with an audio track so learners can listen along while they read.</p>
-        <a class="card-link" href="https://globalaccess.bowvalleycollege.ca/learners/readers.php" target="_blank" rel="noopener">globalaccess.bowvalleycollege.ca <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Ohio's Diploma Options for Adults</h3>
-            <p class="card-source">Ohio Department of Education and Workforce</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">One page that lays out the ways Ohio adults can earn a high school diploma or equivalence: the Adult Workforce Diploma Program, High School Equivalence (formerly GED), the High School Continuation Program, and Aspire.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>The Adult Workforce Diploma Program opened July 1, 2026 and is no cost to adults. The 22+ Adult High School Diploma Program and the Adult Diploma Program no longer take new students.</p>
-        </div>
-        <a class="card-link" href="https://education.ohio.gov/Topics/Testing/Ohio-Options-for-Adult-Diploma" target="_blank" rel="noopener">education.ohio.gov <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">Khan Academy</h3>
-            <p class="card-source">Khan Academy</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span></div>
-        </div>
-        <p class="card-desc">Free videos, practice exercises, and progress tracking that learners can use at their own pace on a phone, tablet, or computer. It covers all four High School Equivalency areas: math, language arts, science, and social studies.</p>
-        <div class="card-love">
-          <p class="card-love-label">Good to know</p>
-          <p>Everything is free except Khanmigo, the AI tutor, which needs a paid subscription for learners.</p>
-        </div>
-        <a class="card-link" href="https://www.khanacademy.org/" target="_blank" rel="noopener">khanacademy.org <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-
-      <article class="resource-card" data-format="video website" data-ohio="false">
-        <div class="card-header">
-          <div>
-            <h3 class="card-title">VOA Learning English</h3>
-            <p class="card-source">Voice of America</p>
-          </div>
-          <div class="card-badges"><span class="badge badge-website">Website</span><span class="badge badge-video">Video</span></div>
-        </div>
-        <p class="card-desc">News stories read about one-third slower than normal speed, with captions, audio, and text. It also has lesson series for beginners (Let's Learn English) and for advanced learners (American Stories, Everyday Grammar).</p>
-        <a class="card-link" href="https://learningenglish.voanews.com/p/5373.html" target="_blank" rel="noopener">learningenglish.voanews.com <svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
-      </article>
-    </div>
-    </section>
-
+  <!-- Soft Ohio watercolor behind the page -->
+  <div class="ohio-stage soft" aria-hidden="true">
+    <div class="ohio-frame">
+      <img class="wash" src="img/ohio-wash-all.webp" alt="" width="555" height="600" decoding="async">
     </div>
   </div>
 
-  <div class="closing">
-    <p>Know a resource that belongs here?</p>
-    <a href="mailto:hello@ohlitco.org">hello@ohlitco.org</a>
-  </div>
-</div>
+  <main id="main" class="page">
+    <p class="page-eyebrow">OhLitCo</p>
+    <h1 class="page-title">Resources</h1>
+    <p class="page-intro">A curated collection of tools, curricula, and websites vetted by Ohio's literacy community. More coming as we grow, and if you have something to add, <a href="#suggest">send it our way</a>.</p>
+    <p class="list-updated" id="list-updated"></p>
 
-<script>
-  const cards = Array.from(document.querySelectorAll('.resource-card'));
-  const sections = Array.from(document.querySelectorAll('[data-section]'));
-  const formatBtns = Array.from(document.querySelectorAll('[data-format-btn]'));
-  const ohioBtn = document.getElementById('ohio-btn');
-  const countEl = document.getElementById('results-count');
-  const clearBtn = document.getElementById('clear');
-  const noRes = document.getElementById('no-results');
-  const formats = new Set();
-  let ohioOnly = false;
+    <nav class="jump-row" aria-label="Jump to a section">
+      <a class="jump" href="#educators">For people who help adults learn</a>
+      <a class="jump" href="#programs">Running a program</a>
+      <a class="jump" href="#funding">Funding</a>
+      <a class="jump" href="#learners">For adults who are learning</a>
+    </nav>
 
-  formatBtns.forEach(b => {
-    const f = b.dataset.formatBtn;
-    b.querySelector('.n').textContent = cards.filter(c => c.dataset.format.split(' ').includes(f)).length;
-    b.addEventListener('click', () => {
-      formats.has(f) ? formats.delete(f) : formats.add(f);
-      apply();
-    });
-  });
-  ohioBtn.querySelector('.n').textContent = cards.filter(c => c.dataset.ohio === 'true').length;
-  ohioBtn.addEventListener('click', () => { ohioOnly = !ohioOnly; apply(); });
-  clearBtn.addEventListener('click', () => { formats.clear(); ohioOnly = false; apply(); });
+    <div class="layout">
+      <aside class="sidebar" aria-label="Find resources">
+        <div class="search-box">
+          <label class="filter-group-label" for="search">Search</label>
+          <input type="search" id="search" placeholder="Title, topic, or keyword" autocomplete="off">
+        </div>
+        <details class="filters" id="filters">
+          <summary>Filter by topic, format, or location</summary>
+          <div class="filter-groups">
+            <div class="filter-group" role="group" aria-labelledby="topic-label">
+              <span class="filter-group-label" id="topic-label">Topic</span>
+              <div class="filter-tags" id="topic-tags"></div>
+            </div>
+            <div class="filter-group" role="group" aria-labelledby="format-label">
+              <span class="filter-group-label" id="format-label">Format</span>
+              <div class="filter-tags" id="format-tags"></div>
+            </div>
+            <div class="filter-group" role="group" aria-labelledby="location-label">
+              <span class="filter-group-label" id="location-label">Location</span>
+              <div class="filter-tags">
+                <button type="button" class="tag" id="ohio-btn" aria-pressed="false"><span class="label">Made for Ohio</span> <span class="n"></span></button>
+              </div>
+            </div>
+          </div>
+        </details>
+        <div>
+          <p class="results-count" id="results-count" aria-live="polite"></p>
+          <button type="button" class="clear" id="clear" hidden>Clear filters</button>
+        </div>
+      </aside>
 
-  function apply() {
-    let shown = 0;
-    cards.forEach(c => {
-      let ok = true;
-      if (formats.size && !c.dataset.format.split(' ').some(f => formats.has(f))) ok = false;
-      if (ohioOnly && c.dataset.ohio !== 'true') ok = false;
-      c.hidden = !ok;
-      if (ok) shown++;
-    });
-    sections.forEach(s => { s.hidden = !s.querySelector('.resource-card:not([hidden])'); });
-    formatBtns.forEach(b => b.setAttribute('aria-pressed', formats.has(b.dataset.formatBtn)));
-    ohioBtn.setAttribute('aria-pressed', ohioOnly);
-    countEl.textContent = 'Showing ' + shown + ' of ' + cards.length + ' resources';
-    clearBtn.hidden = !(formats.size || ohioOnly);
-    noRes.classList.toggle('show', shown === 0);
-  }
-  apply();
-</script>
+      <div class="main">
+        <p class="load-status" id="load-status" role="status">Loading resources&hellip;</p>
+        <noscript><p class="load-status">The resource list needs JavaScript to load. If you cannot turn it on, write to <a href="mailto:hello@ohlitco.org">hello@ohlitco.org</a> and we will send it to you.</p></noscript>
+        <p class="no-results" id="no-results">Nothing matches that combination yet. Try clearing a filter, or <a href="#suggest">tell us what you were looking for</a>.</p>
+        <div id="sections"></div>
+      </div>
+    </div>
+
+    <section class="closing" id="suggest" aria-labelledby="suggest-title">
+      <p class="closing-eyebrow">Suggest a resource</p>
+      <h2 class="closing-headline" id="suggest-title">Know a resource that belongs here?</h2>
+      <p class="closing-body">Tell us what it is and who it helps. Free and Ohio-friendly resources are especially welcome.</p>
+      <form class="suggest-form" name="suggest-resource" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="suggest-resource">
+        <p class="visually-hidden"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-field">
+          <label for="s-name">Name of the resource</label>
+          <input id="s-name" type="text" name="resource-name" required>
+        </div>
+        <div class="form-field">
+          <label for="s-link">Link</label>
+          <input id="s-link" type="url" name="resource-link" placeholder="https://" required>
+        </div>
+        <div class="form-field">
+          <label for="s-for">Who is it for?</label>
+          <select id="s-for" name="audience">
+            <option>People who help adults learn</option>
+            <option>Adults who are learning</option>
+            <option>Both</option>
+            <option>Programs and funders</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="s-why">Why is it worth sharing? <span class="optional">(optional)</span></label>
+          <textarea id="s-why" name="why"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="s-email">Your email <span class="optional">(optional, in case we have a question)</span></label>
+          <input id="s-email" type="email" name="email" autocomplete="email">
+        </div>
+        <button type="submit">Send it our way</button>
+      </form>
+      <a class="closing-email" href="mailto:hello@ohlitco.org">hello@ohlitco.org</a>
+    </section>
+  </main>
+
+  <script src="js/resources.js"></script>
 </body>
 </html>
