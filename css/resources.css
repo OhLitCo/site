@@ -11,10 +11,9 @@
   padding: 7rem 2rem 6rem;
 }
 .page-eyebrow {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-gray);
   margin-bottom: 0.8rem;
 }
