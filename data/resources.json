@@ -157,19 +157,6 @@
     },
 
     {
-      "id": "ohio-literacy-resource-center",
-      "section": "programs",
-      "title": "Ohio Literacy Resource Center",
-      "source": "Kent State University",
-      "url": "https://literacy.kent.edu/Oasis/",
-      "linkLabel": "literacy.kent.edu",
-      "formats": ["website"],
-      "topics": ["training"],
-      "ohio": true,
-      "description": "Ohio's home for adult and family literacy support. It offers training, program management resources, standards-based lesson resources, and a Family Literacy Resource Notebook, and it works with literacy coalitions, libraries, and providers across the state.",
-      "note": { "label": "Questions?", "text": "Toll free in Ohio: 800-765-2897, or email olrc@literacy.kent.edu." }
-    },
-    {
       "id": "adult-learner-persistence-project",
       "section": "programs",
       "title": "Adult Learner Persistence Project",
