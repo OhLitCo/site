@@ -199,11 +199,12 @@
 }
 
 .join-button {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2.5rem;
   font-family: 'Lora', Georgia, serif;
   font-size: 1.05rem;
   padding: 0.95rem 2rem;
-  margin-bottom: 2.5rem;
   border: 1.5px solid var(--cream);
   border-radius: 2px;
   background: var(--cream);
