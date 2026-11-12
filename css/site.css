@@ -221,5 +221,7 @@ body {
 
 @media (max-width: 600px) {
   .site-nav { padding: 1rem 1.2rem; }
-  .nav-links { gap: 1.1rem; }
+  .nav-links { gap: 0.9rem; }
+  .nav-link { font-size: 0.75rem; letter-spacing: 0.05em; }
+  .nav-links a[href="index.html"] { display: none; } /* logo already goes home */
 }

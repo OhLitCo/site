@@ -1,0 +1,145 @@
+/* About page. Shared styles (nav, colors, buttons) live in site.css. */
+
+.about {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 7rem 2rem 6rem;
+  overflow-x: clip;
+}
+.page-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-gray);
+  margin-bottom: 0.8rem;
+}
+.page-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.page-intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin-bottom: 3.5rem;
+}
+
+.about-block { margin-bottom: 3.2rem; }
+.about-block p { font-size: 1.05rem; line-height: 1.75; color: var(--text-gray); max-width: 620px; }
+.about-block p + p { margin-top: 1rem; }
+.about-block a { color: var(--charcoal); border-bottom: 1px solid var(--light-gray); text-decoration: none; }
+.about-block a:hover { border-color: var(--charcoal); }
+.about-block .lead {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin-bottom: 1.2rem;
+}
+.block-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+.vision-feature {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 400px);
+  gap: 2rem 3rem;
+  align-items: center;
+  margin-bottom: 3.6rem;
+}
+.vision-text p { font-size: 1.05rem; line-height: 1.75; color: var(--text-gray); max-width: 520px; }
+.vision-text .vision-sub {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--charcoal);
+  margin: 0.9rem 0 0.8rem;
+}
+/* gray Ohio on the left slowly turns to full color on the right */
+.vision-art { position: relative; width: 100%; aspect-ratio: 540 / 600; }
+.vision-art img { position: absolute; display: block; }
+.va-outline { inset: 0; width: 100%; height: 100%; filter: grayscale(1); opacity: 0.9; }
+.va-paint {
+  left: -18.52%; top: -16.67%; width: 137.04%; height: 133.33%;
+  -webkit-mask-image: linear-gradient(to right, transparent 8%, #000 62%);
+  mask-image: linear-gradient(to right, transparent 8%, #000 62%);
+}
+.vision-line {
+  font-family: 'Lora', Georgia, serif !important;
+  font-style: italic;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem) !important;
+  line-height: 1.2 !important;
+  color: var(--charcoal) !important;
+}
+
+.pillar-list { list-style: none; margin-top: 1.6rem; }
+.pillar-list li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 1.2rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid rgba(200, 195, 188, 0.6);
+}
+.pillar-list li:last-child { border-bottom: 1px solid rgba(200, 195, 188, 0.6); }
+.pillar-list .num {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  text-align: right;
+  color: var(--c);
+}
+.pillar-list h3 { font-family: 'Lora', Georgia, serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem; }
+.pillar-list p { font-size: 1rem; }
+
+.about-contact {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 4px;
+  text-align: center;
+}
+.about-contact h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  margin-bottom: 0.8rem;
+}
+.about-contact p { color: #C9C4BD; margin-bottom: 1.4rem; }
+.contact-email {
+  display: inline-block;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1.5px solid #8F8982;
+  padding-bottom: 2px;
+  margin-bottom: 2rem;
+}
+.contact-email:hover { border-color: var(--cream); }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+.about-contact .door { color: var(--cream); border-color: #8F8982; background: transparent; }
+.about-contact .door:hover, .about-contact .door:focus-visible { background: var(--cream); color: var(--charcoal); }
+
+@media (max-width: 720px) {
+  .vision-feature { grid-template-columns: 1fr; }
+  .vision-art { max-width: 280px; margin: 0.5rem auto; }
+}
+
+@media (max-width: 600px) {
+  .about { padding: 6rem 1.2rem 4rem; }
+  .pillar-list li { grid-template-columns: 38px 1fr; gap: 0 0.8rem; }
+  .pillar-list .num { font-size: 1.8rem; }
+  .about-contact { padding: 2.4rem 1.2rem; }
+}
