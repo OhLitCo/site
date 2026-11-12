@@ -64,6 +64,7 @@ body {
   top: -16.67%;                        /* 100 / 600 */
   width: 137.04%;                      /* 740 / 540 */
   height: 133.33%;                     /* 800 / 600 */
+  mix-blend-mode: multiply;           /* pigments mix where they overlap, like real paint */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }

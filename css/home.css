@@ -197,3 +197,8 @@
   .scroll-hint { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* keep pillar text readable where the paint is deepest */
+.pillar-name, .pillar-desc {
+  text-shadow: 0 0 10px rgba(247, 243, 238, 0.95), 0 0 3px rgba(247, 243, 238, 0.9);
+}
