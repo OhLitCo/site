@@ -179,8 +179,6 @@
 /* ===== CLOSING ===== */
 .closing { padding: 7rem 2rem; }
 .closing-headline { font-size: clamp(1.8rem, 4vw, 3rem); max-width: 600px; }
-.signup { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; max-width: 520px; margin: 0 auto 2.5rem; }
-.signup input[type="email"] { flex: 1 1 260px; min-width: 0; width: auto; }
 
 @media (max-width: 600px) {
   .hero { padding-top: 7rem; }
@@ -199,3 +197,19 @@
 .pillar-name, .pillar-desc {
   text-shadow: 0 0 14px rgba(247, 243, 238, 0.85);
 }
+
+.join-button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2.5rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  padding: 0.95rem 2rem;
+  border: 1.5px solid var(--cream);
+  border-radius: 2px;
+  background: var(--cream);
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.join-button:hover, .join-button:focus-visible { background: transparent; color: var(--cream); }

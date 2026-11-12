@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join us | OhLitCo</title>
+  <meta name="description" content="Join the Ohio Literacy Coalition. Tell us a little about yourself and we will keep you in the loop on resources, meetings, and ways to get involved.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/join.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html" class="nav-logo">Oh<span>Lit</span>Co</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="advocacy.html" class="nav-link">Advocacy</a>
+      <a href="join.html" class="nav-join" aria-current="page">Join us</a>
+    </div>
+  </nav>
+
+  <main id="main" class="about">
+    <p class="page-eyebrow">OhLitCo</p>
+    <h1 class="page-title">Join us</h1>
+    <p class="page-intro">Funded or volunteer, big program or small, if you are helping adults build their reading and writing, you belong here. Tell us a little about yourself and we will keep you in the loop.</p>
+
+    <section class="closing join-card" id="join-form" aria-labelledby="join-h">
+      <h2 id="join-h" class="closing-headline">Pull up a chair.</h2>
+      <form class="suggest-form join-form" name="join" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="join">
+        <p class="visually-hidden"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-field">
+          <label for="j-name">Your name</label>
+          <input id="j-name" type="text" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="j-email">Your email</label>
+          <input id="j-email" type="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="j-role">Which best describes you?</label>
+          <select id="j-role" name="role">
+            <option>Tutor or volunteer</option>
+            <option>Teacher or instructor</option>
+            <option>Program coordinator or director</option>
+            <option>Funder</option>
+            <option>Adult working on my own reading and writing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="j-org">Program or organization <span class="optional">(optional)</span></label>
+          <input id="j-org" type="text" name="organization" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="j-county">County <span class="optional">(optional)</span></label>
+          <input id="j-county" type="text" name="county">
+        </div>
+        <fieldset class="form-field join-checks">
+          <legend>What would you like to hear about? <span class="optional">(check any)</span></legend>
+          <label><input type="checkbox" name="interests" value="Connect meetings"> Quarterly Connect meetings</label>
+          <label><input type="checkbox" name="interests" value="New resources"> New resources</label>
+          <label><input type="checkbox" name="interests" value="Advocacy"> Advocacy and ways to speak up</label>
+          <label><input type="checkbox" name="interests" value="Getting involved"> Ways to help build OhLitCo</label>
+        </fieldset>
+        <button type="submit">Join OhLitCo</button>
+        <p class="join-note">We will only use this to keep you updated about OhLitCo. To be removed or to change anything, write to <a href="mailto:hello@ohlitco.org">hello@ohlitco.org</a>.</p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

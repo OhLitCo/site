@@ -22,8 +22,8 @@ Mind the commas and quotation marks. If the page shows "The resource list did no
 
 ## How changes go live
 
-Changes made on the `main` branch publish to ohlitco.org automatically through Netlify. To check a change first, make it on a branch and open a pull request. Netlify posts a private preview link on the pull request. Merge when it looks right.
+Changes on the `main` branch publish to ohlitco.org automatically through Netlify. `main` is protected, so every change goes through a pull request: make it on a branch, open a pull request, and Netlify posts a private preview link on it. Merge when it looks right.
 
 ## Forms
 
-The signup form on the home page and the "suggest a resource" form on the Resources page are collected by Netlify Forms. Submissions appear in the Netlify dashboard under Forms.
+The quick signup on the home page, the full "Join us" form (`join.html`), and the "suggest a resource" form on the Resources page are collected by Netlify Forms. Submissions appear in the Netlify dashboard under Forms.
