@@ -2,15 +2,13 @@
 
 /* ===== OHIO WATERCOLOR REVEAL =====
    The stage and frame live in site.css. Here each paint layer starts hidden and is
-   revealed top to bottom, like a wash running down the page, as its pillar scrolls in. */
+   faded in over the whole state as its pillar scrolls in, so color builds up gradually. */
 .ohio-frame .wash {
   opacity: 0;
-  clip-path: inset(0 0 100% 0);
-  transition: opacity 3s ease, clip-path 4.5s cubic-bezier(0.3, 0.7, 0.25, 1);
+  transition: opacity 3.5s ease;
 }
 .ohio-frame .wash.shown {
   opacity: 1;
-  clip-path: inset(0 0 0 0);
 }
 
 .hero, .belong, .pillars-section, .closing { position: relative; z-index: 1; }
