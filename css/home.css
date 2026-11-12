@@ -50,6 +50,14 @@
   max-width: 520px;
   margin: 0 auto 2.5rem;
 }
+.doors-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  margin: 0 auto 1rem;
+}
 .doors {
   display: flex;
   flex-wrap: wrap;
