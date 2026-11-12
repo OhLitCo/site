@@ -1,0 +1,201 @@
+/* Home page */
+
+/* ===== OHIO WATERCOLOR REVEAL =====
+   The stage and frame live in site.css. Each paint layer starts invisible, and js/home.js
+   raises its opacity as its pillar scrolls up the screen. */
+.ohio-frame .wash {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.hero, .belong, .pillars-section, .closing { position: relative; z-index: 1; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 6rem;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+}
+.hero-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3em;
+}
+.mission {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+}
+.welcome {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+}
+.doors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+.door { background: rgba(250, 248, 245, 0.6); }
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: bob 2.4s ease-in-out infinite;
+}
+.scroll-hint svg {
+  width: 20px; height: 20px;
+  stroke: var(--text-gray);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ===== WHO BELONGS ===== */
+.belong {
+  text-align: center;
+  padding: 1rem 2rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.belong-label, .pillars-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+}
+.belong-label { margin-bottom: 1.5rem; }
+.belong-chips { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; list-style: none; }
+.belong-chips li {
+  font-size: 1rem;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 100px;
+  background: rgba(250, 248, 245, 0.85);
+}
+
+/* ===== PILLARS ===== */
+.pillars-section {
+  padding: 6rem 2rem 8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.pillars-label { margin-bottom: 4rem; text-align: center; }
+.pillar {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 2.5rem;
+  margin-bottom: 5rem;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.pillar:last-child { margin-bottom: 0; }
+.pillar.visible { opacity: 1; transform: translateY(0); }
+.pillar-number {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--light-gray);
+  text-align: right;
+  padding-top: 0.15em;
+  transition: color 1s ease;
+}
+.pillar-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+.pillar-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  max-width: 520px;
+}
+.pillar-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--light-gray);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pillar-more:hover { color: var(--amber); border-color: var(--amber); }
+.pillar-soon {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+}
+.pillar-rule {
+  grid-column: 2;
+  height: 1px;
+  background: var(--light-gray);
+  margin-top: 3rem;
+  opacity: 0.5;
+}
+
+/* ===== CLOSING ===== */
+.closing { padding: 7rem 2rem; }
+.closing-headline { font-size: clamp(1.8rem, 4vw, 3rem); max-width: 600px; }
+.signup { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; max-width: 520px; margin: 0 auto 2.5rem; }
+.signup input[type="email"] { flex: 1 1 260px; min-width: 0; width: auto; }
+
+@media (max-width: 600px) {
+  .hero { padding-top: 7rem; }
+  .pillar { grid-template-columns: 50px 1fr; gap: 0 1.5rem; }
+  .pillar-number { font-size: 2.5rem; }
+  .pillar-rule { grid-column: 1 / -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ohio-stage .wash, .pillar, .pillar-number { transition: none; }
+  .scroll-hint { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* keep pillar text readable where the paint is deepest */
+.pillar-name, .pillar-desc {
+  text-shadow: 0 0 14px rgba(247, 243, 238, 0.85);
+}

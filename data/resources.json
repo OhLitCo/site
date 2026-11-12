@@ -1,0 +1,383 @@
+{
+  "updated": "2026-11-12",
+
+  "sections": [
+    {
+      "id": "educators",
+      "title": "For people who help adults learn",
+      "blurb": "Curricula, kits, and training for tutors, teachers, and program staff.",
+      "color": "#B07408"
+    },
+    {
+      "id": "programs",
+      "title": "Running a program",
+      "blurb": "Help for starting, strengthening, and sustaining a program, whether you are paid staff or a volunteer team.",
+      "color": "#3D6E4E"
+    },
+    {
+      "id": "funding",
+      "title": "Funding",
+      "blurb": "Grants and free tools for programs. Eligibility and dates change, so check each one before you plan around it.",
+      "color": "#B84C32"
+    },
+    {
+      "id": "learners",
+      "title": "For adults who are learning",
+      "blurb": "Free tools you can use on your own, at your own pace, on your phone or a computer.",
+      "color": "#2E508C"
+    }
+  ],
+
+  "formats": [
+    { "id": "curriculum", "label": "Curriculum" },
+    { "id": "website", "label": "Website" },
+    { "id": "video", "label": "Video and webinars" },
+    { "id": "funding", "label": "Funding" }
+  ],
+
+  "topics": [
+    { "id": "reading", "label": "Reading and writing" },
+    { "id": "english", "label": "English language learning" },
+    { "id": "digital", "label": "Digital skills" },
+    { "id": "diploma", "label": "Diploma and equivalency" },
+    { "id": "life", "label": "Money, work, and life skills" },
+    { "id": "citizenship", "label": "Citizenship" },
+    { "id": "training", "label": "Training for tutors and teachers" },
+    { "id": "find", "label": "Find a class or program" }
+  ],
+
+  "resources": [
+    {
+      "id": "pathway-to-literacy",
+      "section": "educators",
+      "title": "Pathway to Literacy",
+      "source": "Immigrant Welcome Center, Indianapolis",
+      "url": "https://pathwaytoliteracy.org",
+      "linkLabel": "pathwaytoliteracy.org",
+      "formats": ["curriculum"],
+      "topics": ["reading", "english"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A free, well-rounded curriculum and assessment tool for adult learners with emerging literacy. Includes a 10-week sequence organized into four levels (A to D), a reading diagnostic, and an intake assessment.",
+      "note": { "label": "What we love about it", "text": "With everything hosted in Google Slides, this resource is easy to access and use." }
+    },
+    {
+      "id": "esl-instructional-support-kits",
+      "section": "educators",
+      "title": "ESL Instructional Support Kits",
+      "source": "Literacy Minnesota",
+      "url": "https://www.literacymn.org/esl-instructional-support-kits",
+      "linkLabel": "literacymn.org",
+      "formats": ["curriculum"],
+      "topics": ["english", "reading", "citizenship"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A set of five free, downloadable kits: Pronunciation, Phonics and Phonemic Awareness, Speaking and Listening, Reading, and Citizenship. Each is packed with grab-and-go activities for one-on-one, small group, or full class settings.",
+      "note": { "label": "What we love about it", "text": "Grab-and-go activities that actually work. Low prep, high utility." }
+    },
+    {
+      "id": "cilia-t",
+      "section": "educators",
+      "title": "CILIA-T",
+      "source": "University of Minnesota Duluth / Literacy Minnesota",
+      "url": "https://sites.google.com/d.umn.edu/cilia-t/home",
+      "linkLabel": "CILIA-T site",
+      "formats": ["curriculum"],
+      "topics": ["english", "digital"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A comprehensive, research-backed curriculum for intermediate and advanced adult English language learners, focused on academic vocabulary, comprehension, and digital literacy skills.",
+      "note": { "label": "What we love about it", "text": "It pushes learners toward the academic language needed for higher education, career advancement, and citizenship. Rigorous and free." }
+    },
+    {
+      "id": "phonemic-awareness-older-learners",
+      "section": "educators",
+      "title": "Phonemic Awareness in Older Learners: Bridging the Gap",
+      "source": "edWeb.net Teach to Read Community",
+      "url": "https://home.edweb.net/webinar/teach2read20240710/",
+      "linkLabel": "Watch on edWeb",
+      "formats": ["video"],
+      "topics": ["reading", "training"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A free on-demand webinar exploring how phonemic awareness instruction can be a game-changer for older students and adult learners who struggle with word reading. Educators can earn a free CE certificate upon completion.",
+      "note": { "label": "What we love about it", "text": "Phonemic awareness doesn't stop being relevant after second grade, and this webinar makes that case well." }
+    },
+    {
+      "id": "lincs",
+      "section": "educators",
+      "title": "LINCS",
+      "source": "U.S. Department of Education",
+      "url": "https://lincs.ed.gov/",
+      "linkLabel": "lincs.ed.gov",
+      "formats": ["website"],
+      "topics": ["training", "reading"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A national site for adult education practitioners with free self-paced online courses and a searchable resource collection. It also has a Learner Center that connects adults to free online resources for reading and job skills."
+    },
+    {
+      "id": "proliteracy-webinars",
+      "section": "educators",
+      "title": "Free Webinars for Tutors and Teachers",
+      "source": "ProLiteracy",
+      "url": "https://www.proliteracy.org/courses",
+      "linkLabel": "proliteracy.org/courses",
+      "formats": ["video"],
+      "topics": ["training", "english", "citizenship"],
+      "ohio": false,
+      "cost": "Free, some need a free account",
+      "description": "Recent topics include the updated citizenship test, teaching foundational reading skills to adult ESOL learners, health literacy, and moving from ESL to employment. Some resources on the site need a free account."
+    },
+    {
+      "id": "money-smart-for-adults",
+      "section": "educators",
+      "title": "Money Smart for Adults",
+      "source": "Federal Deposit Insurance Corporation (FDIC)",
+      "url": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+      "linkLabel": "fdic.gov",
+      "formats": ["curriculum"],
+      "topics": ["life"],
+      "ohio": false,
+      "languages": "Spanish and others",
+      "description": "An instructor-led financial education curriculum with 14 modules. Each one comes with an instructor guide, slides, and a participant guide you can download. Other languages, including Spanish, are available through the FDIC catalog."
+    },
+    {
+      "id": "literacy-mn-beginning-readers",
+      "section": "educators",
+      "title": "Free Reading Resources for Beginning-Level, US-Born Adult Learners",
+      "source": "Literacy Minnesota",
+      "url": "https://www.literacymn.org/free-reading-resources-for-beginning-level-born-adult-education-learners",
+      "linkLabel": "literacymn.org",
+      "formats": ["website"],
+      "topics": ["reading"],
+      "ohio": false,
+      "cost": "Free, some need a free login",
+      "description": "A short roundup of free reading practice for adults who grew up speaking English and are building basic reading skills. It points to Reading Skills for Today's Adults, ReadWorks, and Newsela Lite. ReadWorks and Newsela Lite need a free login, and ReadWorks was made for kids."
+    },
+
+    {
+      "id": "ohio-literacy-resource-center",
+      "section": "programs",
+      "title": "Ohio Literacy Resource Center",
+      "source": "Kent State University",
+      "url": "https://literacy.kent.edu/Oasis/",
+      "linkLabel": "literacy.kent.edu",
+      "formats": ["website"],
+      "topics": ["training"],
+      "ohio": true,
+      "description": "Ohio's home for adult and family literacy support. It offers training, program management resources, standards-based lesson resources, and a Family Literacy Resource Notebook, and it works with literacy coalitions, libraries, and providers across the state.",
+      "note": { "label": "Questions?", "text": "Toll free in Ohio: 800-765-2897, or email olrc@literacy.kent.edu." }
+    },
+    {
+      "id": "adult-learner-persistence-project",
+      "section": "programs",
+      "title": "Adult Learner Persistence Project",
+      "source": "New England Literacy Resource Center",
+      "url": "https://nelrc.org/persist/overview.html",
+      "linkLabel": "nelrc.org/persist",
+      "formats": ["website"],
+      "topics": ["training"],
+      "ohio": false,
+      "description": "Findings from 18 adult education programs that tested ways to keep learners coming back. It includes strategies for intake, instruction, support, and program design, self-assessment tools, and six \"drivers of persistence.\""
+    },
+    {
+      "id": "literacy-cooperative",
+      "section": "programs",
+      "title": "The Literacy Cooperative",
+      "source": "Greater Cleveland",
+      "url": "https://www.literacycooperative.org/",
+      "linkLabel": "literacycooperative.org",
+      "formats": ["website"],
+      "topics": [],
+      "ohio": true,
+      "description": "A Cleveland nonprofit working to advance literacy through a service delivery system that meets the highest standards in the field. Its vision is that all children and adults in Greater Cleveland reach their highest literacy potential."
+    },
+
+    {
+      "id": "literacy-opportunity-fund",
+      "section": "funding",
+      "title": "Literacy Opportunity Fund",
+      "source": "ProLiteracy",
+      "url": "https://www.proliteracy.org/grants-funding/literacy-opportunity-fund/",
+      "linkLabel": "proliteracy.org",
+      "formats": ["funding"],
+      "topics": [],
+      "ohio": false,
+      "description": "Grants for U.S. nonprofits that teach adults directly. Funds can cover general operating costs like salaries, technology, and supplies, or a specific project or new program.",
+      "note": { "label": "Good to know", "text": "You need to be a registered 501(c)(3) with an EIN. Book distributions and lending libraries are not funded. The 2026 round closed October 1, so watch for the next one." }
+    },
+    {
+      "id": "mobile-learning-fund",
+      "section": "funding",
+      "title": "Mobile Learning Fund",
+      "source": "ProLiteracy and New Readers Press",
+      "url": "https://proliteracy.org/MobileLearningFund",
+      "linkLabel": "proliteracy.org",
+      "formats": ["funding"],
+      "topics": ["digital"],
+      "ohio": false,
+      "description": "Free licenses to online learning tools for adult literacy programs, including New Readers Press Online Learning, Learning Upgrade, EnGen, Leamos, and News for You Online.",
+      "note": { "label": "Good to know", "text": "Applications are open year round and awarded on a rolling basis while funds last. Learners must be 16 or older. You will need to complete a free demo or trial, and it does not cover devices." }
+    },
+    {
+      "id": "dollar-general-literacy-grants",
+      "section": "funding",
+      "title": "Adult and Family Literacy Grants",
+      "source": "Dollar General Literacy Foundation",
+      "url": "https://www.dgliteracy.org/grant-programs/",
+      "linkLabel": "dgliteracy.org",
+      "formats": ["funding"],
+      "topics": [],
+      "ohio": false,
+      "description": "Grants of up to $10,000 for adult and family literacy. Nonprofits, public libraries, and schools or colleges that provide direct literacy services can apply.",
+      "note": { "label": "Good to know", "text": "Your organization must be within 15 miles of a Dollar General store. The 2026 adult and family deadline was in early February, so expect an early-year window." }
+    },
+    {
+      "id": "nld-innovation-grants",
+      "section": "funding",
+      "title": "Innovation Grants",
+      "source": "National Literacy Directory",
+      "url": "https://www.nld.org/page/innovation-grants",
+      "linkLabel": "nld.org",
+      "formats": ["funding"],
+      "topics": [],
+      "ohio": false,
+      "description": "Grants for programs that find successful and innovative ways to reach more learners. Any program listed in the National Literacy Directory can apply.",
+      "note": { "label": "Good to know", "text": "The page does not post award amounts or dates, so check with the directory. Getting your program listed first is the way in." }
+    },
+
+    {
+      "id": "digitallearn",
+      "section": "learners",
+      "title": "DigitalLearn",
+      "source": "Public Library Association",
+      "url": "https://www.digitallearn.org/",
+      "linkLabel": "digitallearn.org",
+      "formats": ["website"],
+      "topics": ["digital"],
+      "ohio": false,
+      "cost": "Free",
+      "languages": "English and Spanish",
+      "description": "A free online hub for digital literacy training. Short, video-based courses with narration on using a computer, navigating websites, email, and internet privacy. Available in English and Spanish.",
+      "note": { "label": "What we love about it", "text": "Clean, accessible, and easy to navigate. The self-paced format works well for learners." }
+    },
+    {
+      "id": "learning-chocolate",
+      "section": "learners",
+      "title": "Learning Chocolate",
+      "source": "learningchocolate.com",
+      "url": "https://www.learningchocolate.com/",
+      "linkLabel": "learningchocolate.com",
+      "formats": ["website"],
+      "topics": ["english"],
+      "ohio": false,
+      "cost": "Free, no login",
+      "languages": "Several language interfaces",
+      "description": "A free vocabulary learning platform organized into themed categories like body, community, food, jobs, and transportation, with picture dictionaries and audio pronunciation. Learners can choose from multiple language interfaces.",
+      "note": { "label": "What we love about it", "text": "Easy to use, visually clear, and fun. There's no login required. Learners can just jump in." }
+    },
+    {
+      "id": "life-skills-for-adult-learners",
+      "section": "learners",
+      "title": "Life Skills for Adult Learners",
+      "source": "Rise / Articulate",
+      "url": "https://rise.articulate.com/share/cKAWIYNASA0GapUVzTPcSBRG7eBGZuZv#/",
+      "linkLabel": "Open course",
+      "formats": ["curriculum"],
+      "topics": ["life"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A free interactive online course covering practical life skills, including workplace readiness, communication, financial literacy, and navigating everyday situations. Self-paced and mobile-friendly.",
+      "note": { "label": "What we love about it", "text": "The mobile-friendly format means learners can use it on their phones, a real advantage for busy adults juggling work and family." }
+    },
+    {
+      "id": "usa-learns",
+      "section": "learners",
+      "title": "USA Learns",
+      "source": "Sacramento County Office of Education",
+      "url": "https://www.usalearns.org/",
+      "linkLabel": "usalearns.org",
+      "formats": ["website"],
+      "topics": ["english", "citizenship", "life"],
+      "ohio": false,
+      "cost": "Free",
+      "description": "A free website where adults can learn English, build job skills, and prepare for U.S. citizenship. Lessons cover speaking, listening, reading, writing, grammar, pronunciation, and life skills, and they work on a phone, computer, or tablet."
+    },
+    {
+      "id": "ohio-aspire-find-a-class",
+      "section": "learners",
+      "title": "Find an Adult Education Class Near You",
+      "source": "Ohio Aspire",
+      "url": "https://education.ohio.gov/Aspire",
+      "linkLabel": "education.ohio.gov/Aspire",
+      "formats": ["website"],
+      "topics": ["find", "diploma"],
+      "ohio": true,
+      "description": "Ohio Aspire is the state's adult education program network, with local programs run by schools, colleges, libraries, and nonprofits. The state's Aspire page and program directory show which program serves your county."
+    },
+    {
+      "id": "national-literacy-directory",
+      "section": "learners",
+      "title": "National Literacy Directory",
+      "source": "NCFL and ProLiteracy",
+      "url": "https://www.nld.org/",
+      "linkLabel": "nld.org",
+      "formats": ["website"],
+      "topics": ["find"],
+      "ohio": false,
+      "description": "A searchable directory where literacy and education programs list themselves, so adults and volunteers can find classes and tutoring near them."
+    },
+    {
+      "id": "bow-valley-readers",
+      "section": "learners",
+      "title": "Bow Valley Readers",
+      "source": "Bow Valley College",
+      "url": "https://globalaccess.bowvalleycollege.ca/learners/readers.php",
+      "linkLabel": "globalaccess.bowvalleycollege.ca",
+      "formats": ["website"],
+      "topics": ["reading", "english"],
+      "ohio": false,
+      "description": "Seven levels of stories written for adults, each with an audio track so learners can listen along while they read."
+    },
+    {
+      "id": "ohio-diploma-options-for-adults",
+      "section": "learners",
+      "title": "Ohio's Diploma Options for Adults",
+      "source": "Ohio Department of Education and Workforce",
+      "url": "https://education.ohio.gov/Topics/Testing/Ohio-Options-for-Adult-Diploma",
+      "linkLabel": "education.ohio.gov",
+      "formats": ["website"],
+      "topics": ["diploma"],
+      "ohio": true,
+      "description": "One page that lays out the ways Ohio adults can earn a high school diploma or equivalence: the Adult Workforce Diploma Program, High School Equivalence (formerly GED), the High School Continuation Program, and Aspire.",
+      "note": { "label": "Good to know", "text": "The Adult Workforce Diploma Program opened July 1, 2026 and is no cost to adults. The 22+ Adult High School Diploma Program and the Adult Diploma Program no longer take new students." }
+    },
+    {
+      "id": "khan-academy",
+      "section": "learners",
+      "title": "Khan Academy",
+      "source": "Khan Academy",
+      "url": "https://www.khanacademy.org/",
+      "linkLabel": "khanacademy.org",
+      "formats": ["website"],
+      "topics": ["diploma"],
+      "ohio": false,
+      "cost": "Free, except the AI tutor",
+      "description": "Free videos, practice exercises, and progress tracking that learners can use at their own pace on a phone, tablet, or computer. It covers all four High School Equivalency areas: math, language arts, science, and social studies.",
+      "note": { "label": "Good to know", "text": "Everything is free except Khanmigo, the AI tutor, which needs a paid subscription for learners." }
+    },
+    {
+      "id": "voa-learning-english",
+      "section": "learners",
+      "title": "VOA Learning English",
+      "source": "Voice of America",
+      "url": "https://learningenglish.voanews.com/p/5373.html",
+      "linkLabel": "learningenglish.voanews.com",
+      "formats": ["website", "video"],
+      "topics": ["english", "reading"],
+      "ohio": false,
+      "description": "News stories read about one-third slower than normal speed, with captions, audio, and text. It also has lesson series for beginners (Let's Learn English) and for advanced learners (American Stories, Everyday Grammar)."
+    }
+  ]
+}

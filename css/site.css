@@ -1,0 +1,225 @@
+/* OhLitCo shared styles: colors, fonts, nav, buttons, closing card */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cream: #F7F3EE;
+  --charcoal: #2A2724;
+  --mid-gray: #8A857E;
+  --text-gray: #5A5550;
+  --light-gray: #C8C3BC;
+  --warm-white: #FAF8F5;
+  --amber: #C8881A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 3px; }
+
+/* ===== OHIO WATERCOLOR STAGE =====
+   Pre-painted images stacked behind the page. The frame is Ohio's shape sized to fit the
+   screen (the art is 540 x 600). The paint images are slightly larger than the frame so
+   splatters that fly past the border are not cut off. */
+.ohio-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  container-type: size;
+}
+.ohio-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(100vw, 90vh);            /* fallback */
+  width: min(100cqw, 90cqh);
+  aspect-ratio: 540 / 600;
+  transform: translate(-50%, -50%);
+}
+.ohio-frame img { position: absolute; display: block; }
+.ohio-frame .outline { inset: 0; width: 100%; height: 100%; }
+.ohio-frame .wash {
+  left: -18.52%;                       /* 100 / 540 */
+  top: -16.67%;                        /* 100 / 600 */
+  width: 137.04%;                      /* 740 / 540 */
+  height: 133.33%;                     /* 800 / 600 */
+  mix-blend-mode: multiply;           /* pigments mix where they overlap, like real paint */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+/* ===== NAV ===== */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(247, 243, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--light-gray);
+}
+.nav-logo {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--amber); }
+.nav-links { display: flex; gap: 1.8rem; }
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-link:hover { color: var(--charcoal); }
+.nav-link[aria-current="page"] { color: var(--charcoal); border-color: var(--charcoal); }
+
+/* ===== SHARED BUTTONS ===== */
+.door, .jump {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border: 1.5px solid var(--charcoal);
+  border-radius: 2px;
+  color: var(--charcoal);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.door:hover, .door:focus-visible,
+.jump:hover, .jump:focus-visible { background: var(--charcoal); color: var(--cream); }
+
+/* ===== CLOSING CARD (dark) ===== */
+.closing {
+  background: var(--charcoal);
+  color: var(--cream);
+  text-align: center;
+}
+.closing-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8F8982;
+  margin-bottom: 2rem;
+}
+.closing-headline {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  margin: 0 auto 1.5rem;
+}
+.closing-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #B5B0A9;
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+}
+.closing-email {
+  display: inline-block;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1.5px solid #5A5550;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.closing-email:hover { color: #fff; border-color: #A8A39C; }
+.closing-footer {
+  margin-top: 4rem;
+  font-size: 0.75rem;
+  color: #8F8982;
+  letter-spacing: 0.08em;
+}
+
+/* ===== FORMS (dark card) ===== */
+.form-field { text-align: left; margin-bottom: 1.1rem; }
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #D4CFC9;
+  margin-bottom: 0.4rem;
+}
+.form-field .optional { font-weight: 400; color: #A8A39C; }
+.closing input[type="text"],
+.closing input[type="url"],
+.closing input[type="email"],
+.closing select,
+.closing textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #6B665F;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--cream);
+}
+.closing select option { color: var(--charcoal); }
+.closing textarea { min-height: 6rem; resize: vertical; }
+.closing input::placeholder, .closing textarea::placeholder { color: #A8A39C; }
+.closing input:focus-visible, .closing select:focus-visible, .closing textarea:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 2px;
+}
+.closing button[type="submit"] {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  padding: 0.9rem 1.6rem;
+  border: 1.5px solid var(--cream);
+  border-radius: 2px;
+  background: var(--cream);
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.closing button[type="submit"]:hover,
+.closing button[type="submit"]:focus-visible { background: transparent; color: var(--cream); }
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .site-nav { padding: 1rem 1.2rem; }
+  .nav-links { gap: 1.1rem; }
+}
