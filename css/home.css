@@ -1,14 +1,11 @@
 /* Home page */
 
 /* ===== OHIO WATERCOLOR REVEAL =====
-   The stage and frame live in site.css. Here each paint layer starts hidden and is
-   faded in over the whole state as its pillar scrolls in, so color builds up gradually. */
+   The stage and frame live in site.css. Each paint layer starts invisible, and js/home.js
+   raises its opacity as its pillar scrolls up the screen. */
 .ohio-frame .wash {
   opacity: 0;
-  transition: opacity 3.5s ease;
-}
-.ohio-frame .wash.shown {
-  opacity: 1;
+  will-change: opacity;
 }
 
 .hero, .belong, .pillars-section, .closing { position: relative; z-index: 1; }
