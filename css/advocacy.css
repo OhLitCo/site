@@ -1,3 +1,5 @@
 /* Advocacy page. Builds on about.css. */
 .act-list p { max-width: 560px; }
 .act-list h3 { margin-top: 0; }
+.act-list a { color: var(--charcoal); border-bottom: 1px solid var(--light-gray); text-decoration: none; }
+.act-list a:hover { border-color: var(--charcoal); }
