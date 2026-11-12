@@ -1,0 +1,22 @@
+/* Join page. Builds on about.css and the dark form card in site.css. */
+.join-card { margin-top: 1rem; padding: 3rem 2rem; border-radius: 12px; }
+.join-card .closing-headline { font-size: 1.6rem; }
+.join-card .closing-headline { margin-bottom: 1.6rem; }
+.join-form { max-width: 520px; margin: 0 auto; }
+.join-checks { border: 0; padding: 0; min-width: 0; }
+.join-checks legend {
+  display: block; padding: 0;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+  color: #D4CFC9; margin-bottom: 0.6rem;
+}
+.join-checks label {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-weight: 400; letter-spacing: 0; font-size: 1rem;
+  color: var(--cream); margin-bottom: 0.55rem; cursor: pointer;
+}
+.join-checks input[type="checkbox"] {
+  width: 1.15rem; height: 1.15rem; flex: none; margin: 0;
+  accent-color: var(--cream);
+}
+.join-note { margin-top: 1.2rem; font-size: 0.85rem; line-height: 1.6; color: #A8A39C; }
+.join-note a { color: var(--cream); border-bottom: 1px solid #8F8982; text-decoration: none; }

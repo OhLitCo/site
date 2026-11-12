@@ -199,3 +199,7 @@
 .pillar-name, .pillar-desc {
   text-shadow: 0 0 14px rgba(247, 243, 238, 0.85);
 }
+
+.signup-more { margin: -1.6rem 0 2.2rem; font-size: 0.95rem; }
+.signup-more a { color: var(--cream); border-bottom: 1px solid #8F8982; text-decoration: none; }
+.signup-more a:hover { border-color: var(--cream); }
