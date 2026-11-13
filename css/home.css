@@ -23,8 +23,8 @@
 .hero-eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
   color: var(--text-gray);
   margin-bottom: 2rem;
 }
@@ -51,10 +51,9 @@
   margin: 0 auto 2.5rem;
 }
 .doors-label {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--text-gray);
   margin: 0 auto 1rem;
 }
@@ -72,9 +71,8 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--text-gray);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
   animation: bob 2.4s ease-in-out infinite;
 }
 .scroll-hint svg {
@@ -221,3 +219,13 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 .join-button:hover, .join-button:focus-visible { background: transparent; color: var(--cream); }
+
+.pillars-mission {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 640px;
+  margin: -2rem auto 4.5rem;
+  text-shadow: 0 0 14px rgba(247, 243, 238, 0.85);
+  text-align: center;
+}
