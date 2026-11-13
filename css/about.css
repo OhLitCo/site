@@ -144,14 +144,19 @@
   .about-contact { padding: 2.4rem 1.2rem; }
 }
 
+/* Connect page: warm amber, the Connection pillar color */
+.ohio-stage.soft .wash { opacity: 0.55; }
 .soon {
   display: inline-block;
   margin-left: 0.6rem;
-  padding: 0.12rem 0.55rem;
+  padding: 0.14rem 0.65rem;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
-  color: var(--charcoal);
-  border: 1px solid var(--light-gray);
+  color: #7A5210;
+  background: rgba(240, 190, 70, 0.28);
+  border: 1px solid rgba(200, 136, 26, 0.45);
   border-radius: 999px;
   vertical-align: 0.1em;
 }
+.connect .about-block .lead { border-left: 3px solid #C8881A; padding-left: 1rem; }
+.connect .block-label { color: #8A5E12; }
