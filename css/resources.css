@@ -269,3 +269,5 @@
   .resource-card { transition: none; }
   .resource-card:hover { transform: none; }
 }
+
+.suggest-top { margin: 1.4rem 0 1.4rem; }
