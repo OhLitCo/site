@@ -266,7 +266,7 @@ body {
   gap: 0.4rem;
   width: 15.5rem;
   max-width: calc(100vw - 2rem);
-  padding: 0.3rem 0.4rem 0.3rem 0.8rem;
+  padding: 0.3rem 0.9rem 0.3rem 0.8rem;
   background: rgba(250, 248, 245, 0.95);
   border: 1px solid var(--light-gray);
   border-radius: 1.4rem;
