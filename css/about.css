@@ -143,3 +143,29 @@
   .pillar-list .num { font-size: 1.8rem; }
   .about-contact { padding: 2.4rem 1.2rem; }
 }
+
+/* Connect page: warm amber, the Connection pillar color */
+.soon {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.14rem 0.65rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #7A5210;
+  background: rgba(240, 190, 70, 0.28);
+  border: 1px solid rgba(200, 136, 26, 0.45);
+  border-radius: 999px;
+  vertical-align: 0.1em;
+}
+.connect .about-block .lead { border-left: 3px solid #C8881A; padding-left: 1rem; }
+.connect .block-label { color: #8A5E12; }
+
+/* Soft watercolor washes drifting in from the corners of the page */
+.blots { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.blot { position: absolute; display: block; height: auto; opacity: 0.85; }
+.blot.b1 { width: min(95vw, 1300px); right: -38vw; top: -22vh; }
+.blot.b2 { width: min(80vw, 1100px); left: -40vw; bottom: -30vh; }
+@media (max-width: 720px) {
+  .blot.b1 { width: 150vw; right: -75vw; top: -12vh; }
+  .blot.b2 { width: 140vw; left: -85vw; bottom: -14vh; }
+}

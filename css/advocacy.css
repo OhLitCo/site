@@ -3,3 +3,8 @@
 .act-list h3 { margin-top: 0; }
 .act-list a { color: var(--charcoal); border-bottom: 1px solid var(--light-gray); text-decoration: none; }
 .act-list a:hover { border-color: var(--charcoal); }
+
+/* Advocacy page: deep blue, the Advocacy pillar color */
+.advocacy .block-label { color: #2E3E95; }
+.advocacy .about-block .lead { border-left: 3px solid #2E3E95; padding-left: 1rem; }
+.advocacy .about-block a { border-color: rgba(46, 62, 149, 0.4); }
