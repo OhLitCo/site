@@ -28,9 +28,10 @@
 
   var bar = document.createElement('div');
   bar.className = 'translate-bar';
+  bar.setAttribute('role', 'group');
   bar.innerHTML =
-    '<label for="lang-pick"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/></svg><span class="sr-only">Read this page in another language</span></label>' +
-    '<select id="lang-pick" title="Translations are automatic and may contain mistakes."></select>' +
+    '<label for="lang-pick" translate="no" class="notranslate"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/></svg><span class="sr-only">Read this page in another language</span></label>' +
+    '<select id="lang-pick" translate="no" class="notranslate" title="Translations are automatic and may contain mistakes."></select>' +
     '<p class="translate-note">Automatic translation. It may contain mistakes.</p>';
   var sel = bar.querySelector('select');
   var cur = current();
