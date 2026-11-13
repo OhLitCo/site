@@ -252,3 +252,32 @@ body {
   .nav-join { grid-area: join; }
   .nav-links { grid-area: links; margin-left: 0; justify-content: space-between; gap: 0.5rem; }
 }
+
+/* ===== LANGUAGE PICKER ===== */
+.translate-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.9rem;
+  padding: 1.4rem 1.5rem 1.8rem;
+  background: var(--cream);
+  border-top: 1px solid var(--light-gray);
+  color: var(--text-gray);
+  font-size: 0.95rem;
+}
+.translate-bar select {
+  font: inherit;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+.translate-note { flex-basis: 100%; text-align: center; font-size: 0.85rem; color: var(--text-gray); }
+.translate-hidden { display: none; }
+/* hide Google's own banner and keep the page where it belongs */
+.skiptranslate iframe, iframe.skiptranslate { display: none !important; }
+body { top: 0 !important; }
