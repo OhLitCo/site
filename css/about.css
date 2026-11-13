@@ -143,3 +143,15 @@
   .pillar-list .num { font-size: 1.8rem; }
   .about-contact { padding: 2.4rem 1.2rem; }
 }
+
+.soon {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.12rem 0.55rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--charcoal);
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
+  vertical-align: 0.1em;
+}
