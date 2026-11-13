@@ -145,7 +145,6 @@
 }
 
 /* Connect page: warm amber, the Connection pillar color */
-.ohio-stage.soft .wash { opacity: 0.55; }
 .soon {
   display: inline-block;
   margin-left: 0.6rem;
@@ -160,3 +159,15 @@
 }
 .connect .about-block .lead { border-left: 3px solid #C8881A; padding-left: 1rem; }
 .connect .block-label { color: #8A5E12; }
+
+/* Soft, nondescript watercolor blotches behind the page */
+.blots { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.blot { position: absolute; display: block; height: auto; opacity: 0.55; filter: blur(2px); }
+.blot.b1 { width: min(36vw, 480px); right: -6vw; top: 9vh; }
+.blot.b2 { width: min(30vw, 420px); left: -9vw; bottom: -7vh; }
+.blot.b3 { width: min(17vw, 230px); right: 14vw; bottom: 6vh; opacity: 0.5; }
+@media (max-width: 720px) {
+  .blot.b1 { width: 70vw; right: -28vw; top: 9vh; }
+  .blot.b2 { width: 62vw; left: -30vw; bottom: -6vh; }
+  .blot.b3 { width: 32vw; right: -8vw; bottom: 12vh; }
+}
