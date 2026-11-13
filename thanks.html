@@ -16,6 +16,7 @@
     .thanks h1 { font-family: 'Lora', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; margin-bottom: 1rem; }
     .thanks p { font-size: 1.1rem; line-height: 1.7; color: var(--text-gray); max-width: 480px; margin-bottom: 2rem; }
     .thanks .door { display: inline-block; }
+    .thanks-links { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
   </style>
 </head>
 <body>
@@ -32,8 +33,12 @@
   </nav>
   <main class="thanks">
     <h1>Thank you.</h1>
-    <p>We got your message. Every note helps us build something that is useful to the people doing this work.</p>
-    <a class="door" href="resources.html">Back to the resources</a>
+    <p>We got your note. We are glad you reached out.</p>
+    <div class="thanks-links">
+      <a class="door" href="index.html">Back to the home page</a>
+      <a class="door" href="resources.html">Browse the resources</a>
+    </div>
   </main>
+  <script src="js/translate.js" defer></script>
 </body>
 </html>
