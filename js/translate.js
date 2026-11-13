@@ -29,9 +29,9 @@
   var bar = document.createElement('div');
   bar.className = 'translate-bar';
   bar.innerHTML =
-    '<label for="lang-pick">Read this page in another language</label>' +
-    '<select id="lang-pick"></select>' +
-    '<p class="translate-note">Translations are automatic and may contain mistakes.</p>';
+    '<label for="lang-pick"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/></svg><span class="sr-only">Read this page in another language</span></label>' +
+    '<select id="lang-pick" title="Translations are automatic and may contain mistakes."></select>' +
+    '<p class="translate-note">Automatic translation. It may contain mistakes.</p>';
   var sel = bar.querySelector('select');
   var cur = current();
   LANGS.forEach(function (l) {
@@ -41,7 +41,16 @@
     sel.appendChild(o);
   });
   sel.addEventListener('change', function () { setLang(sel.value); });
+  if (cur === 'en') bar.className += ' is-english';
   document.body.appendChild(bar);
+
+  /* sit just under the fixed nav, wherever it ends up */
+  var nav = document.querySelector('.site-nav');
+  function place() { bar.style.top = ((nav ? nav.getBoundingClientRect().bottom : 0) + 10) + 'px'; }
+  place();
+  window.addEventListener('resize', place);
+  window.addEventListener('load', place);
+  setTimeout(function () { bar.className += ' is-in'; }, 50);
 
   if (cur !== 'en') {
     var holder = document.createElement('div');
