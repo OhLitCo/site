@@ -297,4 +297,20 @@ body {
 /* hide Google's own banner and keep the page where it belongs */
 .skiptranslate iframe, iframe.skiptranslate { display: none !important; }
 body { top: 0 !important; }
+/* phones: tuck the picker in the bottom corner so it never covers the header or page title */
+@media (max-width: 560px) {
+  .translate-bar {
+    top: auto;
+    bottom: 0.9rem;
+    right: 0.8rem;
+    width: auto;
+    max-width: 14rem;
+    transform: translateY(14px);
+    padding: 0.25rem 0.8rem 0.25rem 0.8rem;
+    gap: 0.1rem 0.4rem;
+  }
+  .translate-bar.is-in { transform: none; }
+  .translate-bar select { flex: 0 1 auto; width: auto; max-width: 9.5rem; }
+  .translate-note { order: -1; }
+}
 @media (prefers-reduced-motion: reduce) { .translate-bar { transition: none; } }

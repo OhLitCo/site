@@ -47,7 +47,10 @@
 
   /* sit just under the fixed nav, wherever it ends up */
   var nav = document.querySelector('.site-nav');
-  function place() { bar.style.top = ((nav ? nav.getBoundingClientRect().bottom : 0) + 10) + 'px'; }
+  function place() {
+    if (window.innerWidth <= 560) { bar.style.top = 'auto'; return; }
+    bar.style.top = ((nav ? nav.getBoundingClientRect().bottom : 0) + 10) + 'px';
+  }
   place();
   window.addEventListener('resize', place);
   window.addEventListener('load', place);
